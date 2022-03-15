@@ -23,6 +23,7 @@
         state: directory
         path: "{{ paperlessng_directory }}"
       register: gitdir
+      check_mode: no
 
     - name: pull paperless-ng
       git:
@@ -65,6 +66,7 @@
           - "*.service"
           - "*.sh"
       register: glob
+      check_mode: no
 
     - name: copy scripts
       copy:
